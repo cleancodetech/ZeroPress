@@ -1,0 +1,153 @@
+{
+    "db_name": "blog",
+    "db_file": "data/blog.db",
+    "version": 2,
+    "maps": {
+        "admin/posts.json": {
+            "to_table": [
+                {
+                    "node": "posts",
+                    "table": "posts"
+                }
+            ]
+        },
+        "admin/menus.json": {
+            "to_table": [
+                "menus"
+            ]
+        },
+        "admin/socialMenus.json": {
+            "to_table": [
+                "socialMenus"
+            ]
+        },
+        "admin/settings.json": {
+            "to_table": [
+                "settings"
+            ]
+        }
+    },
+    "tables": {
+        "json": {
+            "cols": [
+                [
+                    "json_id",
+                    "INTEGER PRIMARY KEY AUTOINCREMENT"
+                ],
+                [
+                    "directory",
+                    "TEXT"
+                ],
+                [
+                    "file_name",
+                    "TEXT"
+                ],
+                [
+                    "cert_user_id",
+                    "TEXT"
+                ]
+            ],
+            "indexes": [
+                "CREATE UNIQUE INDEX path ON json(directory, file_name)",
+                "CREATE INDEX blog_json_id ON posts (json_id)"
+            ],
+            "schema_changed": 132
+        },
+        "posts": {
+            "cols": [
+                [
+                    "id",
+                    "INTEGER"
+                ],
+                [
+                    "title",
+                    "TEXT"
+                ],
+                [
+                    "body",
+                    "TEXT"
+                ],
+                [
+                    "featuredImage",
+                    "TEXT"
+                ],
+                [
+                    "date_added",
+                    "INTEGER"
+                ],
+                [
+                    "json_id",
+                    "INTEGER REFERENCES json (json_id)"
+                ]
+            ],
+            "indexes": [
+                "CREATE UNIQUE INDEX blog_posts_key ON posts (json_id, id)",
+                "CREATE INDEX blog_posts_id ON posts (id)"
+            ],
+            "schema_changed": 132
+        },
+        "menus": {
+            "cols": [
+                [
+                    "title",
+                    "TEXT"
+                ],
+                [
+                    "target",
+                    "TEXT"
+                ],
+                [
+                    "json_id",
+                    "INTEGER REFERENCES json (json_id)"
+                ]
+            ],
+            "indexes": [
+                "CREATE UNIQUE INDEX blog_menus_key ON menus (json_id, title)",
+                "CREATE INDEX blog_menus_title ON menus (title)"
+            ],
+            "schema_changed": 132
+        },
+        "socialMenus": {
+            "cols": [
+                [
+                    "type",
+                    "TEXT"
+                ],
+                [
+                    "target",
+                    "TEXT"
+                ],
+                [
+                    "json_id",
+                    "INTEGER REFERENCES json (json_id)"
+                ]
+            ],
+            "indexes": [
+                "CREATE UNIQUE INDEX blog_social_menus_key ON socialMenus (json_id, target)",
+                "CREATE INDEX blog_social_menus_target ON socialMenus (target)"
+            ],
+            "schema_changed": 132
+        },
+        "settings": {
+            "cols": [
+                [
+                    "name",
+                    "TEXT"
+                ],
+                [
+                    "value",
+                    "TEXT"
+                ],
+                [
+                    "json_id",
+                    "INTEGER REFERENCES json (json_id)"
+                ]
+            ],
+            "indexes": [
+                "CREATE UNIQUE INDEX blog_settings_key ON settings (json_id, name)",
+                "CREATE INDEX blog_settings_name ON settings (name)"
+            ],
+            "schema_changed": 132
+        }
+    }
+}

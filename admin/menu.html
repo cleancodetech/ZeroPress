@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>ZeroPress Blog</title>
+        <meta charset="utf-8">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <base href="" target="_top" id="base">
+        <script>base.href = document.location.href.replace("/media", "").replace("index.html", "").replace(/[&?]wrapper=False/, "").replace(/[&?]wrapper_nonce=[A-Za-z0-9]+/, "")</script>
+    </head>
+<body>
+
+    <div id="adminSidebar"></div>
+    
+    <div id="adminNewPost">
+        <h3>Menus</h3>
+        <div id="menus">
+            <div id="menusEdit">
+                <div id="menusCustomEdit">
+                    <h4>Main Menu</h4>
+                    <p>This is the main menu that appears on the side of all blog posts</p>
+                    <button class="addNew" id="newCustomMenu">Add New</button>
+                </div>
+                <div id="menusSocialEdit">
+                    <h4>Social Menu</h4>
+                    <p>These are the links for various social media accounts, that appear on your blog</p>
+                    <button class="addNew" id="newSocialMenu">Add New</button>
+                </div>
+            </div>
+            <div id="menusControls">
+                <button id="saveMenus" type="submit">Save</button>
+            </div>
+        </div>
+    </div>
+
+<script type="text/javascript" src="../themes/ZeroFrame.js"></script>
+<script type="text/javascript" src="js/admin.js"></script>
+<script type="text/javascript" src="js/menu.js"></script>
+<link rel="stylesheet" type="text/css" href="css/admin.css">
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>ZeroPress Blog</title>
+        <meta charset="utf-8">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <base href="" target="_top" id="base">
+        <script>base.href = document.location.href.replace("/media", "").replace("index.html", "").replace(/[&?]wrapper=False/, "").replace(/[&?]wrapper_nonce=[A-Za-z0-9]+/, "")</script>
+    </head>
+<body>
+
+    <div id="adminSidebar"></div>
+    
+    <div id="adminNewPost">
+        <h3>Settings</h3>
+        <div id="settings">
+            <div id="settingsEdit">
+                <div class="settingsRow">
+                    <label>Site Name</label>
+                    <input id="settingsSiteName" type="text" placeholder="Add a name for your blog">
+                </div>
+                <div class="settingsRow">
+                    <label>Site Description</label>
+                    <input id="settingsSiteDescription" type="text" placeholder="Add a description for your blog">
+                </div>
+                <div class="settingsRow" id="featuredImage">
+                    <label>Cover Image</label>
+                    <div id="featuredImageControls">
+                        <div id="upload" title="Upload a file from your computer">
+                            <input id="imageUpload" name="photo" accept="image/jpg,image/jpeg,image/png" type="file">
+                            <p>U</p>
+                        </div>
+                        <span id="imageRemove" title="Remove the selected featured image">D</span>
+                    </div>
+                    <div id="imageHolder"></div>
+                </div>
+            </div>
+            <div id="settingsControls">
+                <button id="saveSettings" type="submit">Save</button>
+            </div>
+        </div>
+    </div>
+    
+    <img src="//:0" id="hiddenFeaturedImage">
+
+<script type="text/javascript" src="../themes/ZeroFrame.js"></script>
+<script type="text/javascript" src="js/admin.js"></script>
+<script type="text/javascript" src="js/settings.js"></script>
+<link rel="stylesheet" type="text/css" href="css/admin.css">
+
+</body>
+</html>

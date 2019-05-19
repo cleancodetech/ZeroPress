@@ -1,0 +1,627 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    overflow: hidden;
+}
+
+
+
+
+#adminSidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20vw;
+    height: 100vh;
+    background-color: rgb(35, 42, 49);
+}
+
+#adminSidebar h2 {
+    font-weight: normal;
+    color: rgb(194, 203, 219);
+    padding: 2vh 1vw;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: rgb(22, 24, 25);
+    margin: 0 0 2vh 0;
+    cursor: pointer;
+}
+
+#adminSidebar a {
+    display: block;
+    color: rgb(194, 203, 219);
+    text-decoration: none;
+    padding: 1vh 1vw;
+    background-color: rgba(255, 255, 255, 0);
+    transition: background-color 0.3s ease 0s;
+}
+
+#adminSidebar a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#adminSidebar #sidebarFooter {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1vh 1vh 2vh;
+    color: rgb(194, 203, 219);
+    font-size: 0.8em;
+}
+
+#adminSidebar #sidebarFooter a {
+    display: inline-block;
+    padding: 0;
+    font-weight: bold;
+    color: rgb(253, 253, 253);
+}
+
+#adminSidebar #sidebarFooter a:hover{
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#adminSidebar p {
+    font-style: italic;
+    margin: 0 0 2vh 0;
+}
+
+
+
+
+#adminNewPost {
+    width: 100vw;
+    box-sizing: border-box;
+    padding: 0 0 0 20vw;
+    height: 100vh;
+    overflow: auto;
+}
+
+#adminNewPost form {
+    overflow: hidden;
+    display: flex;
+    margin: 0 1vw;
+}
+
+#postMain {
+    flex: 3;
+    margin: 0 1vw 0 0;
+}
+
+#postMain input[type="text"] {
+    display: block;
+    width: 100%;
+    margin: 1vh auto;
+    font-size: 1.5em;
+    border: none;
+    outline: none;
+    color: rgb(51, 51, 51);
+    background-color: rgba(35, 42, 49, 0.1);
+    line-height: 1.5em;
+    padding: 0 0.5em;
+    box-sizing: border-box;
+}
+
+#postMain .pell {
+    width: 100%;
+    margin: 2vh auto;
+    border: solid 1px rgba(35, 42, 49, 0.4)
+}
+
+#postMain .pell-actionbar {
+    background-color: rgb(35, 42, 49);
+    border: none;
+}
+
+#postMain .pell-button {
+    color: rgb(194, 203, 219);
+    font-size: 1em;
+    width: 2em;
+    display: inline-block;
+    margin: 0;
+}
+
+#postMain .pell-content {
+    height: 70vh;
+}
+
+#postSide {
+    flex: 1;
+    box-sizing: border-box;
+}
+
+button {
+    display: block;
+    width: 100%;
+    margin: 1vh auto 2vh 0;
+    border: none;
+    outline: none;
+    color: rgb(51, 51, 51);
+    font-size: 1.5em;
+    line-height: 1.5em;
+    cursor: pointer;
+    transition: background-color 0.3s ease 0s;
+}
+
+#postSide button[type=submit] {
+    background-color: rgba(0, 255, 0, 0.25);
+}
+
+#postSide button[type=submit]:hover {
+    background-color: rgba(0, 255, 0, 0.75);
+}
+
+
+
+
+#adminWall {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
+    background-color: rgba(0, 0, 0, 0.95);
+}
+
+#adminWallWrapper {
+    width: 30vw;
+    top: 30vh;
+    margin: auto;
+    padding: 2vh 2vw;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    box-shadow: 0 0 5vw 1vh black;
+}
+
+
+
+
+#featuredImage {
+    width: 100%;
+    border: solid 1px rgb(35, 42, 49);
+    box-sizing: border-box;
+}
+
+#featuredImage h4 {
+    text-align: center;
+    background-color: rgb(35, 42, 49);
+    color: rgb(194, 203, 219);
+    font-weight: normal;
+    font-size: 1em;
+    line-height: 1.5em;
+    padding: 0 0.5vw;
+}
+
+#featuredImage #featuredImageControls {
+    display: flex;
+    width: 95%;
+    margin: 1vh auto;
+    justify-content: space-between;
+}
+
+#featuredImage #upload {
+    position: relative;
+    overflow: hidden;
+    width: 49%;
+}
+
+#featuredImage #upload:hover p {
+    background-color: rgba(0, 255, 0, 0.25);
+}
+
+#featuredImage input {
+    cursor: pointer;
+    position: absolute;
+    opacity: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+
+#featuredImage p {
+    text-align: center;
+    background-color: rgb(194, 203, 219);
+    color: rgb(51, 51, 51);
+    font-size: 2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease 0s;
+}
+
+#featuredImage span {
+    text-align: center;
+    background-color: rgb(194, 203, 219);
+    color: rgb(51, 51, 51);
+    font-size: 2em;
+    font-weight: bold;
+    width: 49%;
+    cursor: pointer;
+    transition: background-color 0.3s ease 0s;
+}
+
+#featuredImage span:hover {
+    background-color: rgba(255, 0, 0, 0.25);
+}
+
+#featuredImage img {
+    width: 95%;
+    margin: 1vh auto;
+    display: block;
+}
+
+
+
+
+#pellContents{
+    display: none;
+}
+
+
+
+
+#adminAllPosts {
+    width: 100vw;
+    box-sizing: border-box;
+    padding: 0 0 0 20vw;
+    height: 100vh;
+    overflow: auto;
+}
+
+#adminAllPosts h3, #adminNewPost h3 {
+    font-weight: normal;
+    color: rgb(194, 203, 219);
+    padding: 2vh 1vw;
+    font-size: 1.5em;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: rgb(35, 42, 49);
+    margin: 0 0 2vh 0;
+}
+
+#adminAllPosts .post {
+    margin: 1vh 1vw;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+    color: rgb(34, 34, 34);
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 0.9em;
+    transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
+}
+
+#adminAllPosts .post:hover{
+    background-color: rgba(35, 42, 49, 0.25);
+}
+
+#adminAllPosts .post div {
+    flex: 1;
+    text-align: center;
+    background-color: rgba(194, 203, 219, 0.3);
+    font-size: 1em;
+    line-height: 1.5em;
+    padding: 0 0.5em 0 0.5em;
+    margin: 0 0.5vw 0 0;
+    transition: background-color 0.3s ease 0s;
+}
+
+#adminAllPosts .post div.post_title {
+    flex: 5;
+    text-align: left;
+}
+
+#adminAllPosts .post div.post_date {
+    flex: 2;
+}
+
+#adminAllPosts .post div.post_view {
+    background-color: rgba(0, 255, 0, 0.25);
+    cursor: pointer;
+}
+
+#adminAllPosts .post div.post_view:hover {
+    background-color: rgba(0, 255, 0, 1);
+}
+
+#adminAllPosts .post a.post_edit {
+    background-color: rgba(255, 165, 0, 0.25);
+    flex: 1;
+    text-align: center;
+    font-size: 1em;
+    line-height: 1.5em;
+    padding: 0 0.5em 0 0.5em;
+    color: rgb(34, 34, 34);
+    text-decoration: none;
+    margin: 0 0.5vw 0 0;
+    transition: background-color 0.3s ease 0s;
+}
+
+#adminAllPosts .post a.post_edit:hover {
+    background-color: rgba(255, 165, 0, 0.75);
+}
+
+#adminAllPosts .post div.post_delete {
+    background-color: rgba(255, 0, 0, 0.25);
+    margin: 0;
+    cursor: pointer;
+}
+
+#adminAllPosts .post div.post_delete:hover {
+    background-color: rgba(255, 0, 0, 0.55);
+}
+
+
+
+
+#pellCredit {
+    width: 100%;
+    margin: -2vh auto 0;
+    font-size: 0.9em;
+    font-family: monospace;
+    background-color: rgb(35, 42, 49);
+    box-sizing: border-box;
+    line-height: 1.8em;
+    padding: 0 1em;
+    color: rgb(194, 203, 219);
+}
+
+#pellCredit a {
+    font-family: monospace;
+    color: rgb(194, 203, 219);
+    text-decoration: none;
+    outline: none;
+    font-weight: bold;
+}
+
+
+
+
+#settings, #menus {
+    box-sizing: border-box;
+    padding: 1vh 1vw;
+    display: flex;
+}
+
+#settings #settingsEdit, #menus #menusEdit {
+    flex: 4;
+    margin: 0 1vw 0 0;
+}
+
+#settings #settingsEdit .settingsRow {
+    margin: 1vh 0 2vh;
+    box-sizing: border-box;
+    border: solid 1px rgb(35, 42, 49);
+}
+
+#settings #settingsEdit .settingsRow label {
+    text-align: center;
+    background-color: rgb(35, 42, 49);
+    color: rgb(194, 203, 219);
+    font-weight: normal;
+    font-size: 1.2em;
+    line-height: 1.7em;
+    padding: 0 0.5vw;
+    display: block;
+}
+
+#settings #settingsEdit .settingsRow input {
+    background-color: rgba(35, 42, 49, 0.1);
+    border: none;
+    font-size: 1em;
+    outline: none;
+    display: block;
+    padding: 0 0.5vw;
+    box-sizing: border-box;
+    width: 100%;
+    line-height: 2em;
+}
+
+#settings #settingsControls, #menus #menusControls {
+    flex: 1;
+}
+
+#settings #settingsControls button[type=submit], #menus #menusControls button[type=submit] {
+    background-color: rgba(0, 255, 0, 0.25);
+}
+
+#settings #settingsControls button[type=submit]:hover, #menus #menusControls button[type=submit]:hover {
+    background-color: rgba(0, 255, 0, 0.75);
+}
+
+
+
+
+#menusCustomEdit, #menusSocialEdit {
+    border: solid 1px rgb(0, 0, 0);
+    box-sizing: border-box;
+    margin: 1vh 0;
+}
+
+#menus h4 {
+    text-align: center;
+    background-color: rgb(35, 42, 49);
+    color: rgb(194, 203, 219);
+    font-weight: normal;
+    font-size: 1.2em;
+    line-height: 1.7em;
+    padding: 0 0.5vw;
+}
+
+#menus p {
+    background-color: rgba(35, 42, 49, 0.25);
+    color: rgb(35, 42, 49);
+    font-weight: normal;
+    font-size: 0.9em;
+    line-height: 1.4em;
+    font-style: italic;
+    padding: 0 0.5vw;
+}
+
+#menus button.addNew {
+    width: 30%;
+    min-width: 6em;
+    margin: 2vh auto;
+    font-size: 1em;
+    background-color: rgb(255, 255, 255);
+    padding: 1vh;
+    border: solid 1px rgb(0, 0, 0);
+    letter-spacing: 0px;
+    transition: letter-spacing 0.3s ease 0s;
+}
+
+#menus button.addNew:hover {
+    letter-spacing: 2px;
+}
+
+#menus .menuCustom, #menus .menuSocial {
+    box-sizing: border-box;
+    padding: 0 0 1vh 0;
+    background-color: rgba(35, 42, 49, 0.25);
+    margin: 2vh 2vw;
+    overflow: hidden;
+}
+
+#menus .menuCustom input, #menus .menuSocial input {
+    display: block;
+    margin: 1vh auto;
+    border: none;
+    background-color: rgba(255, 255, 0, 0);
+    font-size: 1em;
+    line-height: 1.5em;
+    padding: 0 0.25em;
+    box-sizing: border-box;
+    width: 90%;
+    border-bottom: solid 1px rgb(0, 0, 0);
+    outline: none;
+}
+
+#menus .menuSocial select {
+    display: block;
+    margin: 1vh auto 1vh 5%;
+    border: none;
+    background-color: rgba(255, 255, 0, 0);
+    font-size: 1em;
+    line-height: 1.5em;
+    padding: 0 0.25em;
+    box-sizing: border-box;
+    width: 50%;
+    border-bottom: solid 1px rgb(0, 0, 0);
+    outline: none;
+    clear: both;
+}
+
+#menus .menuCustom span, #menus .menuSocial span {
+    background-color: rgb(255, 125, 125);
+    display: block;
+    width: 10%;
+    min-width: 6em;
+    text-align: center;
+    color: rgb(34, 34, 34);
+    line-height: 1.5em;
+    float: right;
+    clear: both;
+    cursor: pointer;
+}
+
+
+
+
+#intro {
+    width: 90%;
+    margin: 10vh auto;
+}
+
+#intro h5 {
+    font-size: 2em;
+    font-weight: normal;
+    font-family: monospace;
+    letter-spacing: 2px;
+    color: rgb(17, 17, 17);
+    text-align: center;
+    line-height: 4em;
+}
+
+#intro p {
+    font-family: monospace;
+    color: rgb(17, 17, 17);
+    text-align: center;
+    line-height: 2em;
+}
+
+#intro h6 {
+    font-weight: normal;
+    text-align: center;
+    width: 50%;
+    margin: 5vh auto;
+    border: solid 1px rgb(0, 0, 0);
+    font-size: 1em;
+    font-family: monospace;
+    padding: 10vh 0;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+#update {
+    box-sizing: border-box;
+    padding: 1vh 1vw;
+}
+
+#update p {
+    width: 70%;
+    margin: 4vh auto;
+    text-align: center;
+    font-family: monospace;
+}
+
+#update strong {
+    font-family: monospace;
+}
+
+#update_button {
+    max-width: 9em;
+    margin: 4vh auto;
+    background-color: rgb(0, 170, 255);
+    color: rgb(255, 255, 255);
+    border: double 3px rgb(255, 255, 255);
+    box-sizing: border-box;
+    line-height: 2em;
+    transition: letter-spacing 0.3s ease 0s, background-color 0.3s ease 0s;
+}
+
+#update_button:hover {
+    letter-spacing: 2px;
+    background-color: rgb(0, 140, 210);
+}
+
+#barWrap {
+    width: 80%;
+    margin: 4vh auto;
+    line-height: 5vh;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    border: solid 1px;
+}
+
+#bar {
+    background-color: rgba(0, 255, 0, 0.75);
+    width: 50%;
+    height: 5vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width 0.3s ease 0s;
+}

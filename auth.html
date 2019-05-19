@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>New ZeroNet site!</title>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <base href="" target="_top" id="base">
+    <script>base.href = document.location.href.replace("/media", "").replace("index.html", "").replace(/[&?]wrapper=False/, "").replace(/[&?]wrapper_nonce=[A-Za-z0-9]+/, "")</script>
+    <link rel="stylesheet" type="text/css" href="themes/kronos/main.css">
+</head>
+<body>
+    
+    <div id="auth">
+        <p>Dear visitor, it seems you do not have permission to access the admin panel for this site</p>
+        <p>But here is a link to this site's home url</p>
+        <p>Perhaps you can find a way to contact the administrator from there</p>
+        <a href="#">Home</a>
+        <p>Created with ZeroPress</p>
+    </div>
+    
+<script type="text/javascript" src="themes/ZeroFrame.js"></script>
+<script>
+    var page = new ZeroFrame();
+    
+    page.cmd( "siteInfo", [], function( info ) {
+        
+        document.querySelector( '#auth a' ).setAttribute( 'href', window.location.origin + '/' + info.address );
+
+    });
+</script>
+
+</body>
+</html>

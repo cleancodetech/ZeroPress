@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>ZeroPress Blog</title>
+        <meta charset="utf-8">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <base href="" target="_top" id="base">
+        <script>base.href = document.location.href.replace("/media", "").replace("index.html", "").replace(/[&?]wrapper=False/, "").replace(/[&?]wrapper_nonce=[A-Za-z0-9]+/, "")</script>
+    </head>
+<body>
+
+    <div id="adminSidebar"></div>
+    
+    <div id="adminNewPost">
+        <h3>Create a new Post</h3>
+        <form>
+            <div id="postMain">
+                <input type="text" id="post_title" placeholder="Post Title">
+                <div id="editor" class="pell"></div>
+                <p id="pellCredit"><a href="https://github.com/jaredreich/pell" target="_blank" class="clearnet_link">pell Editor</a>, created by <a href="https://jaredreich.com/pell/" target="_blank" class="clearnet_link">@jaredreich</a></p>
+                <textarea id="pellContents"></textarea>
+            </div>
+            <div id="postSide">
+                <button id="publishButton" type="submit">Publish</button>
+                <div id="featuredImage">
+                    <h4>Featured Image</h4>
+                    <div id="featuredImageControls">
+                        <div id="upload" title="Upload a file from your computer">
+                            <input id="imageUpload" name="photo" accept="image/jpg,image/jpeg,image/png" type="file">
+                            <p>U</p>
+                        </div>
+                        <span id="imageRemove" title="Remove the selected featured image">D</span>
+                    </div>
+                    <div id="imageHolder"></div>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    <img src="//:0" id="hiddenFeaturedImage">
+
+<script type="text/javascript" src="../themes/ZeroFrame.js"></script>
+<script type="text/javascript" src="js/pell.min.js"></script>
+<script type="text/javascript" src="js/admin.js"></script>
+<script type="text/javascript" src="js/newPost.js"></script>
+<link rel="stylesheet" type="text/css" href="css/pell.min.css">
+<link rel="stylesheet" type="text/css" href="css/admin.css">
+
+</body>
+</html>

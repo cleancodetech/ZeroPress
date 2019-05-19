@@ -1,0 +1,12 @@
+{
+    "next_post_id": 49,
+    "posts": [
+        {
+            "id": 48,
+            "title": "ZeroPress version 0.2",
+            "body": "<h2>version 0.2</h2><p><br></p><p>This version comes with an updater. This way, hopefully, all next versions will be easily installed and new features will be available for users' sites, without them having to manually changing the content of their sites' folders.</p><p><br></p><p>Apart from this, there was some minor upgrades to the code, and \"ZeroMe\" was added to the available social media buttons</p><h2><br></h2><h2>version 0.1</h2><p><br></p><p>A rather crude attempt to create a blogging platform for ZeroNet.</p><p><br></p><p>It yet lacks fundamental functionality like the ability to post comments and in-post images, but we 'll get there sooner or later.</p><p><br></p><p>For the time, you can access the admin panel by appending the \"admin/\" text to your nav bar, after your zite url and you can start making changes to your zite.</p><p><br></p><p>You can easily create a new ZeroPress blog by cloning this one.</p><p><br></p><p>This attempt owes a lot to the pell editor, developed by jared reich, which you can find <a href=\"https://jaredreich.com/pell/\">here</a>.</p><p><br></p><p>Due to an insurmountable&nbsp;insufficiency of documentation, most of the development was done with plain trial and error. An attempt to track every bug was made, but users should keep in mind that this a beta version of a blogging platform in a beta version of a new network.</p><p><br></p><p>Would love to hear some feedback to the ZeroMail that you 'll find on the menu or at the footer</p>",
+            "featuredImage": "1557853224857-lyv0pjdkz7sn5fuzketi7.jpg",
+            "date_added": 1557853230647
+        }
+    ]
+}
