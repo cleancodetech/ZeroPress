@@ -7,6 +7,10 @@
         {
             "type": "zerome",
             "target": "http://127.0.0.1:43110/Me.ZeroNetwork.bit/?Profile/1MoonP8t4rk9QamBUPh5Aspkwa1Xhf5ux2/1H2ao62jz8FK62H4VtDwHT1VW7hsyabqqX/gtat314@zeroid.bit"
+        },
+        {
+            "type": "github",
+            "target": "https://github.com/cleancodetech/ZeroPress"
         }
     ]
 }

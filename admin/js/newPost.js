@@ -1,4 +1,4 @@
-var editor = window.pell.init({
+window.pell.init({
 
     element: document.getElementById('editor'),
 
@@ -25,7 +25,16 @@ var editor = window.pell.init({
         'ulist',
         'code',
         'line',
-        'link'
+        'link',
+        {
+            name: 'Insert Image',
+            icon: '&#128247;',
+            title: 'Insert Image',
+            result: () => {
+                
+                this.selectImages.appear();
+            }
+        }
     ],
 
     classes: {
@@ -39,8 +48,9 @@ var editor = window.pell.init({
 
 
 
-var site_info   = null;
-var sidebarInit = new Sidebar();
+var site_info       = null;
+var sidebarInit     = new Sidebar();
+var selectImages    = new SelectImages();
 
 page.cmd( "siteInfo", [], function( info ) {
     

@@ -133,36 +133,14 @@ var allPosts = function( posts ) {
         this.title  = this.data.title;
         this.date   = new Date( this.data.date_added ).toString().substr( 0, 21 );
         
-        this.box = document.createElement("DIV");
-        this.box.setAttribute( 'class', 'post' );
-        _allPosts.wrapper.appendChild( this.box );
+        this.box            = appendDom({ tag: 'DIV', class: 'post', parent: _allPosts.wrapper });
+        this.titleElem      = appendDom({ tag: 'DIV', class: 'post_title', text: this.title, parent: this.box });
+        this.dateElem       = appendDom({ tag: 'DIV', class: 'post_date', text: this.date, parent: this.box });
+        this.viewElem       = appendDom({ tag: 'DIV', class: 'post_view', text: 'View', parent: this.box });
+        this.editElem       = appendDom({ tag: 'A', class: 'post_edit', text: 'Edit', href: 'editPost.html?id=' + this.data.id, parent: this.box });
+        this.deleteElem     = appendDom({ tag: 'DIV', class: 'post_delete', text: 'Delete', parent: this.box });
         
-        this.titleElem = document.createElement("DIV");
-        this.titleElem.setAttribute( 'class', 'post_title' );
-        this.titleElem.textContent = this.title;
-        this.box.appendChild( this.titleElem );
-        
-        this.dateElem = document.createElement("DIV");
-        this.dateElem.setAttribute( 'class', 'post_date' );
-        this.dateElem.textContent = this.date;
-        this.box.appendChild( this.dateElem );
-        
-        this.viewElem = document.createElement("DIV");
-        this.viewElem.setAttribute( 'class', 'post_view' );
         this.viewElem.dataset.postid = this.data.id;
-        this.viewElem.textContent = 'View';
-        this.box.appendChild( this.viewElem );
-        
-        this.editElem = document.createElement("A");
-        this.editElem.setAttribute( 'class', 'post_edit' );
-        this.editElem.setAttribute( 'href', 'editPost.html?id=' + this.data.id );
-        this.editElem.textContent = 'Edit';
-        this.box.appendChild( this.editElem );
-        
-        this.deleteElem = document.createElement("DIV");
-        this.deleteElem.setAttribute( 'class', 'post_delete' );
-        this.deleteElem.textContent = 'Delete';
-        this.box.appendChild( this.deleteElem );
         
         this.deleteElem.addEventListener( 'click', this );
         this.viewElem.addEventListener( 'click', this );

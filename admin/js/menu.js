@@ -44,23 +44,9 @@ var CustomMenus = function() {
         this.menuCustomElem.setAttribute( 'class', 'menuCustom' );
         _CustomMenus.newCustomMenuButtonElem.parentNode.insertBefore( this.menuCustomElem, _CustomMenus.newCustomMenuButtonElem );
         
-        this.delElem = document.createElement("SPAN");
-        this.delElem.textContent = 'Delete';
-        this.menuCustomElem.appendChild( this.delElem );
-
-        this.titleElem = document.createElement("INPUT");
-        this.titleElem.setAttribute( 'type', 'text' );
-        this.titleElem.setAttribute( 'class', 'menuCustomTitle' );
-        this.titleElem.setAttribute( 'placeholder', 'Menu Title' );
-        this.titleElem.setAttribute( 'title', 'This is the text that will appear for your menu entry' );
-        this.menuCustomElem.appendChild( this.titleElem );
-
-        this.targetElem = document.createElement("INPUT");
-        this.targetElem.setAttribute( 'type', 'text' );
-        this.targetElem.setAttribute( 'class', 'menuCustomTarget' );
-        this.targetElem.setAttribute( 'placeholder', 'Menu Target' );
-        this.targetElem.setAttribute( 'title', 'This is the link to which the menu entry will be redirecting' );
-        this.menuCustomElem.appendChild( this.targetElem );
+        this.delElem        = appendDom({ tag: 'SPAN', text: 'Delete', parent: this.menuCustomElem });
+        this.titleElem      = appendDom({ tag: 'INPUT', type: 'text', class: 'menuCustomTitle', placeholder: 'Menu Title', title: 'This is the text that will appear for your menu entry', parent: this.menuCustomElem });
+        this.targetElem     = appendDom({ tag: 'INPUT', type: 'text', class: 'menuCustomTarget', placeholder: 'Menu Target', title: 'This is the link to which the menu entry will be redirecting', parent: this.menuCustomElem });
         
         this.delElem.addEventListener( 'click', this );
         
@@ -136,7 +122,8 @@ var SocialMenus = function() {
             facebook: 'Facebook',
             twitter: 'Twitter',
             zeromail: 'ZeroMail',
-            zerome: 'ZeroMe'
+            zerome: 'ZeroMe',
+            github: 'GitHub'
         };
         
         this.menuCustomElem = null;
@@ -147,28 +134,17 @@ var SocialMenus = function() {
         this.menuCustomElem.setAttribute( 'class', 'menuSocial' );
         _SocialMenus.newSocialMenuButtonElem.parentNode.insertBefore( this.menuCustomElem, _SocialMenus.newSocialMenuButtonElem );
         
-        this.delElem = document.createElement("SPAN");
-        this.delElem.textContent = 'Delete';
-        this.menuCustomElem.appendChild( this.delElem );
+        this.delElem = appendDom({ tag: 'SPAN', text: 'Delete', parent: this.menuCustomElem });
         
-        this.selectElem = document.createElement("SELECT");
-        this.menuCustomElem.appendChild( this.selectElem );
+        this.selectElem = appendDom({ tag: 'SELECT', parent: this.menuCustomElem });
         
         for ( var prop in this.socialMedia ) {
-            
-            var optionElem = document.createElement("OPTION");
-            optionElem.value = prop;
-            optionElem.textContent = this.socialMedia[prop];
-            this.selectElem.appendChild( optionElem );
+        
+            var optionElem = appendDom({ tag: 'OPTION', value: prop, text: this.socialMedia[prop], parent: this.selectElem });
             
         }
 
-        this.targetElem = document.createElement("INPUT");
-        this.targetElem.setAttribute( 'type', 'text' );
-        this.targetElem.setAttribute( 'class', 'menuCustomTarget' );
-        this.targetElem.setAttribute( 'placeholder', 'eg: https://www.facebook.com/myAwesomeFacebookPage' );
-        this.targetElem.setAttribute( 'title', 'This is the link to which the menu entry will be redirecting' );
-        this.menuCustomElem.appendChild( this.targetElem );
+        this.targetElem = appendDom({ tag: 'INPUT', type: 'text', class: 'menuCustomTarget', placeholder: 'eg: https://www.facebook.com/myAwesomeFacebookPage', title: 'This is the link to which the menu entry will be redirecting', parent: this.menuCustomElem });
         
         this.delElem.addEventListener( 'click', this );
         

@@ -109,7 +109,7 @@ body {
 
 #postMain .pell {
     width: 100%;
-    margin: 2vh auto;
+    margin: 1vh auto 2vh;
     border: solid 1px rgba(35, 42, 49, 0.4)
 }
 
@@ -128,6 +128,8 @@ body {
 
 #postMain .pell-content {
     height: 70vh;
+    padding: 10px 10px 0 10px;
+    overflow-y: scroll;
 }
 
 #postSide {
@@ -624,4 +626,111 @@ button {
     left: 0;
     z-index: -1;
     transition: width 0.3s ease 0s;
+}
+
+
+
+
+div#select_images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: none;
+    z-index: 10;
+}
+
+div#select_image_container {
+    position: absolute;
+    top: 5vh;
+    left: 5vw;
+    width: 90vw;
+    height: 90vh;
+    background-color: rgb(255, 255, 255);
+}
+
+div#select_image_show {
+    height: 80vh;
+    box-sizing: border-box;
+    margin: 1vh 1vw;
+    box-shadow: 0 0 5px black inset;
+    background-color: rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    overflow-y: scroll;
+    padding: 0 0 0 0.5vw;
+}
+
+div#select_image_controls {
+    display: flex;
+    margin: 1vh 1vw 0;
+    justify-content: space-between;
+}
+
+div#select_image_controls button {
+    width: 25%;
+    margin: 0;
+}
+
+button#select_image_close:hover{
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+button#select_image_select:hover{
+    background-color: rgba(0, 255, 0, 0.5);
+}
+
+div#select_images div.uploaded_image {
+    width: 16vw;
+    height: 15vw;
+    float: left;
+    margin: 1vw 0.5vw;
+    background-size: cover;
+    box-sizing: border-box;
+    border: solid 1px rgb(0, 0, 0);
+    position: relative;
+    background-position: center;
+}
+
+div#select_images div.selected_image {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M20 2L9 14 4 9l-4 3 9 9L24 6z'/%3E%3C/svg%3E");
+    position: absolute;
+    width: 100%;
+    background-color: rgba(127, 255, 127, 0.5);
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+}
+
+#editor img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    cursor: move;
+}
+
+div#select_images div#select_image_new {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M10 9H4l8-9 8 9h-6v11h-4V9zm11 11v2H3v-2H1v4h22v-4h-2z'/%3E%3C/svg%3E");
+    width: 16vw;
+    height: 15vw;
+    float: left;
+    margin: 1vw 0.5vw;
+    background-size: 50%;
+    box-sizing: border-box;
+    border: solid 1px rgb(0, 0, 0);
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+div#select_images div#select_image_new input#select_image_new_input {
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
 }

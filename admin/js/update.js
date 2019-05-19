@@ -28,22 +28,10 @@ var ProgressInfo = function() {
     
     this.initiate = function() {
         
-        this.barWrap = document.createElement("DIV");
-        this.barWrap.id = 'barWrap';
-        this.container.appendChild( this.barWrap );
-        
-        this.bar = document.createElement("DIV");
-        this.bar.id = 'bar';
-        this.barWrap.appendChild( this.bar );
-        
-        this.label = document.createElement("DIV");
-        this.label.id = 'barLabel';
-        this.label.textContent = '0%';
-        this.barWrap.appendChild( this.label );
-        
-        this.notif = document.createElement("P");
-        this.notif.textContent = 'Do not close this window before finish!';
-        this.container.appendChild( this.notif );
+        this.barWrap    = appendDom({ tag: 'DIV', id: 'barWrap', parent: this.container });
+        this.bar        = appendDom({ tag: 'DIV', id: 'bar', parent: this.barWrap });
+        this.label      = appendDom({ tag: 'DIV', id: 'barLabel', text: '0%', parent: this.barWrap });
+        this.notif      = appendDom({ tag: 'P', text: 'Do not close this window before finish!', parent: this.container });
         
     };
     
@@ -168,8 +156,7 @@ page.cmd( "fileGet", ["/admin/updater.json"], function( content ) {
         
     } else {
         
-        var latest = document.createElement("P");
-        document.getElementById('update').appendChild( latest );
+        var latest = appendDom({ tag: 'P', parent: document.getElementById('update') });
         
         page.cmd( "fileGet", [ "cors-" + local_content.source + "/admin/updater.json" ], function( updater ) {
             
@@ -185,14 +172,9 @@ page.cmd( "fileGet", ["/admin/updater.json"], function( content ) {
                 
             latest.innerHTML = 'Latest version: <strong>' + remote_content.version + '</strong>';
             
-            var warning = document.createElement("P");
-            warning.innerHTML = '<strong>It is strongly recommended to backup your site before updatting. Loss of data may occure.</strong>';
-            document.getElementById('update').appendChild( warning );
+            var warning = appendDom({ tag: 'P', html: '<strong>It is strongly recommended to backup your site before updatting. Loss of data may occure.</strong>', parent: document.getElementById('update') });
             
-            var updateButton = document.createElement("BUTTON");
-            updateButton.id = 'update_button';
-            updateButton.textContent = 'Update';
-            document.getElementById('update').appendChild( updateButton );
+            var updateButton = appendDom({ tag: 'BUTTON', id: 'update_button', text: 'Update', parent: document.getElementById('update') });
             
             updateButton.addEventListener( 'click', initUpdateFlow );
             

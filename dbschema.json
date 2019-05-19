@@ -51,7 +51,7 @@
                 "CREATE UNIQUE INDEX path ON json(directory, file_name)",
                 "CREATE INDEX blog_json_id ON posts (json_id)"
             ],
-            "schema_changed": 132
+            "schema_changed": 134
         },
         "posts": {
             "cols": [
@@ -84,7 +84,7 @@
                 "CREATE UNIQUE INDEX blog_posts_key ON posts (json_id, id)",
                 "CREATE INDEX blog_posts_id ON posts (id)"
             ],
-            "schema_changed": 132
+            "schema_changed": 134
         },
         "menus": {
             "cols": [
@@ -105,7 +105,7 @@
                 "CREATE UNIQUE INDEX blog_menus_key ON menus (json_id, title)",
                 "CREATE INDEX blog_menus_title ON menus (title)"
             ],
-            "schema_changed": 132
+            "schema_changed": 134
         },
         "socialMenus": {
             "cols": [
@@ -126,7 +126,7 @@
                 "CREATE UNIQUE INDEX blog_social_menus_key ON socialMenus (json_id, target)",
                 "CREATE INDEX blog_social_menus_target ON socialMenus (target)"
             ],
-            "schema_changed": 132
+            "schema_changed": 134
         },
         "settings": {
             "cols": [
@@ -147,7 +147,7 @@
                 "CREATE UNIQUE INDEX blog_settings_key ON settings (json_id, name)",
                 "CREATE INDEX blog_settings_name ON settings (name)"
             ],
-            "schema_changed": 132
+            "schema_changed": 134
         }
     }
 }
